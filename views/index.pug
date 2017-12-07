@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Index Page
+        //- link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/public/css/bootstrap/bootstrap.min.css")
+        link(rel='stylesheet', href='/public/css/style.css', type='text/css')
+        link(rel="shortcut icon" href="/public/img/icon/favicon.png")
+    body
+        div.container
+            h2 See all todos,add new,update or delete
+            a.btn.btn-success(href="/new") Add new Todo
+            a.btn.btn-warning.btn_left_margin(href="/delete/all") Delete All ToDos
+            h1 All ToDos
+            table.table.table_small
+                thead
+                    tr
+                        th Title
+                        th Actions
+                tbody
+                    if todos.length > 0
+                        each todo in todos
+                            tr
+                                td=todo.title
+                                td 
+                                    a.btn.btn-primary(href="/update/"+todo.id) Update
+                                    a.btn.btn-success.btn_left_margin(href="/delete/"+todo.id) Delete
+                        tfoot
+                            tr
+                                td.text-right(colspan=2) Count: #{todos.length}          
+                    else
+                        td.text-center(colspan=2) No results                
+            //- div.list
+            //-     if todos.length > 0
+
+            //-         ul
+            //-             each todo in todos
+            //-                 li=todo.title
+            //-                     a.btn.btn-primary(href="/update/"+todo.id) Update
+            //-                     a.btn.btn-success(href="/delete/"+todo.id) Delete

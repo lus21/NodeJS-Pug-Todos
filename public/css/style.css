@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.btn_left_margin{
+    margin-left: 12px;
+}
+.back_btn_container{
+    margin-top: 20px;
+}
+@media (min-width: 1200px){ 
+    .table_small{
+        width: 50%;
+    }
+}
