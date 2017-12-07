@@ -26,7 +26,7 @@ todos.post('/new', (req, res) => {
 	};
 	todosArray.push(newTodo);
 	res.redirect('/');
-})
+});
 
 //shows update todo page
 todos.get('/update/:id', (req, res) => {
