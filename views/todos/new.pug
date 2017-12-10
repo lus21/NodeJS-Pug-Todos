@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+    div.container
+        h2 Add new Todo
+        form.form-inline(action="/new", method="POST")
+            div.form-group
+                label(for="title") Title:
+                input#title.form-control(type="text" name="title" placeholder="Enter title")
+            button.btn.btn-success.btn_left_margin(type="submit") Submit
+        div.back_btn_container
+            a.btn.btn-primary(href="/") Back    
+
+        //- form(action="/new", method="POST")
+        //-     input(type="text" name="title")
+        //-     button(type="submit") Submit

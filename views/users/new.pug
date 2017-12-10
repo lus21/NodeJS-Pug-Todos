@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    div.container
+        h2 Add new User
+        form.form-inline(action="/users/new", method="POST")
+            div.form-group
+                label(for="name") Name:
+                input#name.form-control(type="text" name="name" placeholder="Enter name")
+            div.form-group.left_margin 
+                label(for="age") Age:
+                input#age.form-control(type="text" name="age" placeholder="Enter age")
+            button.btn.btn-success.btn_left_margin(type="submit") Submit
+        div.back_btn_container
+            a.btn.btn-primary(href="/users") Back    

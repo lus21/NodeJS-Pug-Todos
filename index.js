@@ -1,11 +1,20 @@
 require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const path = require('path');
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
+import path from 'path';
+import initalizeRoutes from './routes';
+
+import { connect } from  './db';
+
+connect()
+	.then(() =>{
+		console.log('MongoDb');
+	});
 const app = express();
 
-const initalizeRoutes = require('./routes');
+
 
 
 app.use(bodyParser.json());

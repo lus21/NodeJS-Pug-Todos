@@ -10,12 +10,12 @@ const todosArray = [];
 
 //shows all todos, homepage
 todos.get('/', (req, res) => {
-	res.render('index', {todos: todosArray});
+	res.render('todos/index', {todos: todosArray});
 });
 
 //shows add new todo page
 todos.get('/new', (req, res) => {
-	res.render('new');
+	res.render('todos/new');
 });
 
 //add new todo action, redirects homepage
@@ -32,8 +32,9 @@ todos.post('/new', (req, res) => {
 todos.get('/update/:id', (req, res) => {
 	const  index = todosArray.findIndex((element) => {
 		return element.id == req.params.id;
-	}); 
-	res.render('update', {todo: todosArray[index]});
+	});
+	if (index>=0) res.render('todos/update', {todo: todosArray[index]});
+	res.redirect('/');
 });
 
 //update todo action, redirects to homepage

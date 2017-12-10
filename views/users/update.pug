@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    div.container
+        h2 Update User
+        form.form-inline(action="/users/update/"+user.id, method="POST")
+            div.form-group
+                label(for="name") Name:
+                input.form-control#name(type="text" name="name" value=user.name placeholder="Enter name")
+            div.form-group.left_margin   
+                label(for="age") Age:
+                input.form-control#age(type="text" name="age" value=user.age placeholder="Enter age")
+            button.btn.btn-success.btn_left_margin(type="submit") Submit
+        div.back_btn_container
+            a.btn.btn-primary(href="/users") Back  

@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+    div.container
+        h2 Update Todo
+        form.form-inline(action="/update/"+todo.id, method="POST")
+            div.form-group
+                label(for="title") Title:
+                input#title.form-control(type="text" name="title" value=todo.title placeholder="Enter title")
+            button.btn.btn-success.btn_left_margin(type="submit") Submit
+        div.back_btn_container
+            a.btn.btn-primary(href="/") Back  

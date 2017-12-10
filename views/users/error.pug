@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+    div.container
+        div.panel.panel-danger.top_margin
+            div.panel-heading Error | Operation failed
+            div.panel-body
+                p=msg 
+        div.back_btn_container
+            a.btn.btn-primary(href="/users") Go Users Homepage     

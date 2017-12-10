@@ -2,10 +2,10 @@
     margin: 0px;
     padding: 0px;
 }
-.btn_left_margin{
+.btn_left_margin, .left_margin{
     margin-left: 12px;
 }
-.back_btn_container{
+.back_btn_container, .top_margin{
     margin-top: 20px;
 }
 @media (min-width: 1200px){ 
